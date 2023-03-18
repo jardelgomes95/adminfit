@@ -18,10 +18,11 @@
                 <td>{{obj_aluno.nome}}</td>
                 <td>{{obj_aluno.phone}}</td>
                 <td>{{obj_aluno.data}}</td>
-                <td><a href="{% url 'cadastrar_treino' %}"><i class="fa fa-edit" rel="tooltip" title="Cadastrar Treino"></i> </a>
-                <td><a href="{% url 'editar_aluno' obj_aluno.pk %}"><i title="ATUALIZAR"></i> </a>
-                <td><a href="{% url 'detalhar_aluno' obj_aluno.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
-
+                <td>
+                    <a class="btn btn-primary" href="{% url 'cadastrar_treino' %}"><i class="fa fa-edit" rel="tooltip" title="Cadastrar Treino"></i> </a>
+                    <a href="{% url 'editar_aluno' obj_aluno.pk %}"><i title="ATUALIZAR"></i> </a>
+                    <a href="{% url 'detalhar_aluno' obj_aluno.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
+                </td>
             </tr>
     {% empty %}
         <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.

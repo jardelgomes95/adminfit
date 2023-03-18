@@ -230,12 +230,35 @@ class treinoA(models.Model):
     rep18 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
     aexc_19 = models.CharField(max_length=100, blank=False, null=True, verbose_name="19")
     rep19 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_20 = models.CharField(max_length=100, blank=False, null=True, verbose_name="20")
+    aexc_20 = models.CharField(max_length=100, blank=True, null=True, verbose_name="20")
     rep20 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_21 = models.CharField(max_length=100, blank=True, null=True, verbose_name="21")
+    rep21 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_22 = models.CharField(max_length=100, blank=True, null=True, verbose_name="22")
+    rep22 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_23 = models.CharField(max_length=100, blank=True, null=True, verbose_name="23")
+    rep23 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_24 = models.CharField(max_length=100, blank=True, null=True, verbose_name="24")
+    rep24 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_25 = models.CharField(max_length=100, blank=True, null=True, verbose_name="25")
+    rep25 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_26 = models.CharField(max_length=100, blank=True, null=True, verbose_name="26")
+    rep26 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_27 = models.CharField(max_length=100, blank=True, null=True, verbose_name="27")
+    rep27 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_28 = models.CharField(max_length=100, blank=True, null=True, verbose_name="28")
+    rep28 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_29 = models.CharField(max_length=100, blank=True, null=True, verbose_name="29")
+    rep29 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    aexc_30 = models.CharField(max_length=100, blank=True, null=True, verbose_name="30")
+    rep30 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+
+
     obs = models.TextField(max_length=400, blank=True, null=True, verbose_name="Observações")
 
     def __str__(self):
         return f'{self.nome}'
+
 
 
 #class personal(models.Model):

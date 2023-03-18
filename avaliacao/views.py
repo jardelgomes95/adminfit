@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude
+from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude, treinoB, treinoC, treinoD, treinoE
 from django.contrib import messages         # mensagens do django
 from django.urls import reverse_lazy     # retorno após submeter
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView      # class based view
@@ -89,7 +89,7 @@ class treinoListView(ListView):
     paginate_by = 20
 
 class treinoUpdateView(UpdateView):
-    model = avaliacao
+    model = treinoA
     template_name = 'update/update_avaliacao.html'
     fields = '__all__'
 
@@ -99,7 +99,7 @@ class treinoUpdateView(UpdateView):
 
 
 class treinoDetailView(DetailView):
-    model = avaliacao
+    model = treinoA
     template_name = 'detail/detail_treino.html'
 
 #####Ficha de Saúde#######
