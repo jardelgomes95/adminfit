@@ -1,0 +1,49 @@
+{% load bootstrap %}
+{% block content %}
+    <h1>PÁGINA DE LISTAGEM DE AVALIAÇÕES</h1>
+    <a class="btn btn-primary" href="{% url 'cadastrar_avaliacao' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+
+    <table class="table table-striped">
+        <thead>
+            <th>NOME</th>
+            <th>DATA DA AVALIAÇÃO</th>
+            <th>PRÓXIMA AVALIAÇÃO</th>
+            <th>AÇÕES</th>
+        </thead>
+        <tbody>
+    {% for obj_avaliacao in object_list %}
+            <tr>
+                <td>{{obj_avaliacao.nome}}</td>
+                <td>{{obj_avaliacao.dt_avaliacao}}</td>
+                <td>{{obj_aluno.px_avaliação}}</td>
+
+                <td><a href="{% url 'editar_avaliacao' obj_avaliacao.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
+                <td><a href="{% url 'detalhar_avaliacao' obj_avaliacao.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
+            </tr>
+    {% empty %}
+        <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.
+            <br/>(–_–)</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+     {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-default" href="?page=1">&laquo; Primeira Página </a>
+                <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i> Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Próxima Página <i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-default" href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}

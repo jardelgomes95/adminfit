@@ -1,0 +1,15 @@
+{% load bootstrap %}
+{% block content %}
+    <h1>ALUNO</h1>
+
+<p><b>Nome:</b> {{ object.nome }}</p>
+<p><b>Matricula:</b> {{ object.matricula }}</p>
+<p><b>Email:</b> {{ object.email }}</p>
+<p><b>CPF:</b> {{ object.cpf }}</p>
+<p><b>Telefone:</b> {{ object.phone }}</p>
+<p><b>Profissão:</b> {{ object.profissao }}</p>
+<p><b>Data do Cadastro:</b> {{ object.data }}</p>
+<p><b>Observações:</b> {{ object.obs }}</p>
+
+
+{% endblock %}

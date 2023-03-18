@@ -1,0 +1,28 @@
+{% load bootstrap %}
+{% block content %}
+    <h1>ALUNO</h1>
+
+<p><b>Nome:</b> {{ object.nome }}</p>
+<p><b>Data da Avaliação:</b> {{ object.dt_avaliacao }}</p>
+<p><b>Próxima Avaliação:</b> {{ object.px_avaliação }}</p>
+<p><b>Sexo:</b> {{ object.sexo }}</p>
+<p><b>Idade:</b> {{ object.idade }}</p>
+<p><b>Altura:</b> {{ object.altura }}</p>
+<p><b>Peso:</b> {{ object.peso }}</p>
+<p><b>IMC:</b> {{ object.imc }}</p>
+<p><b>Faz atividade Física:</b> {{ object.ativo }}</p>
+<p><b>Cintura:</b> {{ object.cintura }} CM</p>
+<p><b>Quadril:</b> {{ object.quadril }} CM</p>
+<p><b>RCQ:</b> {{ object.rcq }}</p>
+<p><b>Torax:</b> {{ object.torax }} CM</p>
+<p><b>Ombro:</b> {{ object.ombro }} CM</p>
+<p><b>Abdomen:</b> {{ object.abdomen }} CM</p>
+<p><b>Biceps Relaxado:</b> {{ object.biceps }} CM</p>
+<p><b>Biceps Contraido:</b> {{ object.bicesps }} CM</p>
+<p><b>Coxa:</b> {{ object.coxa }} CM</p>
+<p><b>Panturrilha:</b> {{ object.panturrilha }} CM</p>
+<p><b>Percentual de Gordura:</b> {{ object.gordura }} %</p>
+
+
+
+{% endblock %}

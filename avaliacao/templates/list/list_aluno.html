@@ -1,0 +1,52 @@
+{% load bootstrap %}
+{% block content %}
+    <h1>PÁGINA DE LISTAGEM DE ALUNOS</h1>
+    <a class="btn btn-primary" href="{% url 'cadastrar_aluno' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+
+    <table class="table table-striped" border="0px">
+        <thead>
+            <th>MATRICULA</th>
+            <th>NOME</th>
+            <th>CONTATO</th>
+            <th>DATA DE CADASTRO</th>
+            <th>AÇÕES</th>
+        </thead>
+        <tbody>
+    {% for obj_aluno in object_list %}
+            <tr>
+                <td>{{obj_aluno.matricula}}</td>
+                <td>{{obj_aluno.nome}}</td>
+                <td>{{obj_aluno.phone}}</td>
+                <td>{{obj_aluno.data}}</td>
+                <td><a href="{% url 'cadastrar_treino' %}"><i class="fa fa-edit" rel="tooltip" title="Cadastrar Treino"></i> </a>
+                <td><a href="{% url 'editar_aluno' obj_aluno.pk %}"><i title="ATUALIZAR"></i> </a>
+                <td><a href="{% url 'detalhar_aluno' obj_aluno.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
+
+            </tr>
+    {% empty %}
+        <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.
+            <br/>(–_–)</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+     {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-default" href="?page=1">&laquo; Primeira Página </a>
+                <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i> Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Próxima Página <i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-default" href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
