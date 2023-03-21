@@ -1,6 +1,21 @@
+{% load static %}
 {% load bootstrap %}
 {% block content %}
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail_treino.css' %}">
+</head>
+
     <h1>ALUNO</h1>
+
+<div id="cabecalho">
+    <p><b>NOME DO ALUNO:</b> {{object.nome}}</p>
+    <p><b>DATA DO TREINO:</b> {{object.dt_treino}}</p>
+    <p><b>VALIDO ATÉ:</b> {{object.validade}}</p>
+</div>
+
+
 
 <table class="table table-striped" border="1px">
     <thead>

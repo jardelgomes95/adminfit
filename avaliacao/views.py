@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude, treinoB, treinoC, treinoD, treinoE
+from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude #treinoB, treinoC, treinoD, treinoE
 from django.contrib import messages         # mensagens do django
 from django.urls import reverse_lazy     # retorno após submeter
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView      # class based view
