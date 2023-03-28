@@ -1,26 +1,87 @@
 {% load static %}
-{% load bootstrap %}
 {% block content %}
 
 
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/detail_treino.css' %}">
+<head xmlns="http://www.w3.org/1999/html">
+    <title>Treino</title>
+    
+<style>
+
+body{
+    margin-top: 3cm;
+    margin-left: 3cm;
+    margin-right: 2cm;
+    margin-bottom: 2cm;
+}
+
+h1 {
+  font-size: 32px;
+  font-family: 'Times New Roman', Times, serif;
+  width: 90%;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+#cabecalho{
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+ .colA{
+  background-color: #525f4c;
+  width: 85%;
+}
+
+.colb{
+  background-color: #525f4c;
+  width: 15%;
+}
+
+#A{
+    background-color: rgb(72, 138, 72);
+    font-size: 28;
+    width: 90%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+    </style>
+
 </head>
 
-    <h1>ALUNO</h1>
+<body>
+    <h1>FICHA DE TREINO</h1>
+</br>
 
 <div id="cabecalho">
-    <p><b>NOME DO ALUNO:</b> {{object.nome}}</p>
-    <p><b>DATA DO TREINO:</b> {{object.dt_treino}}</p>
-    <p><b>VALIDO ATÉ:</b> {{object.validade}}</p>
+    <h3><b>NOME DO ALUNO:</b> {{object.nome}}</h3>
+    <h3><b>DATA DO TREINO:</b> {{object.dt_treino}}</h3>
+    <h3><b>VALIDO ATÉ:</b> {{object.validade}}</h3>
 </div>
+</br>
 
+<p id="A">TREINO A</p>  
 
 
 <table class="table table-striped" border="1px">
     <thead>
-    <th>Exercício</th>
-    <th>Repetições</th>
+    <th class="colA">Exercício</th>
+    <th class="colB">Repetições</th>
     </thead>
     <tbody>
     <tr>
@@ -72,8 +133,11 @@
         <td><p>{{ object.rep12 }}</p></td>
     </tr>
 
-    </tbody>
+
 
     <p>{{ object.obs }}</p>
 
+    </tbody>
+
+</body>
 {% endblock %}

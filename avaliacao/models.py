@@ -26,7 +26,7 @@ class aluno(models.Model):
         super().save(*args, **kwargs)
 
 
-    def __str__(self): return f'{self.nome, self.matricula}'
+    def __str__(self): return str(self.nome) + ' - ' + 'Matricula: ' + (self.matricula)
 
 #class financeiro(models.Model):
 #    #Controle Financeiro
@@ -91,11 +91,6 @@ class avaliacao(models.Model):
     d5 = models.IntegerField(null=True, blank=True, verbose_name="Supra-Ilíaca")
     d6 = models.IntegerField(null=True, blank=True, verbose_name="Cutânea Abdominal")
     d7 = models.IntegerField(null=True, blank=True, verbose_name="Femural Médio")
-    #d_soma = models.FloatField(null=True, blank=True, verbose_name="Soma Dobras", editable=False)
-    #dc1 = models.FloatField(null=True, blank=True, verbose_name="Dobras Cutâneas 1", editable=False)
-    #dc2 = models.FloatField(null=True, blank=True, verbose_name="Dobras Cutâneas 2", editable=False)
-    #dc3 = models.FloatField(null=True, blank=True, verbose_name="Dobras Cutâneas 3", editable=False)
-    #dctotal = models.FloatField(null=True, blank=True, verbose_name="Densidade Corporal", editable=False)
     gordura = models.FloatField(null=True, blank=True, verbose_name="gordura em %")
 
 
@@ -192,6 +187,8 @@ class exercicio(models.Model):
 
 class treinoA(models.Model):
     nome = models.ForeignKey('aluno', on_delete=models.DO_NOTHING, default=None, verbose_name="Aluno")
+    dt_treino = models.DateField(default=datetime.today(), verbose_name="Data do Treino")
+    validade = models.DateField(default=datetime.today() + timedelta(days=90), verbose_name="Treino Válido Até")
     aexc_1 = models.CharField(max_length=100, blank=False, null=True, verbose_name="1")
     rep1 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
     aexc_2 = models.CharField(max_length=100, blank=False, null=True, verbose_name="2")
@@ -216,29 +213,39 @@ class treinoA(models.Model):
     rep11 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
     aexc_12 = models.CharField(max_length=100, blank=False, null=True, verbose_name="12")
     rep12 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_13 = models.CharField(max_length=100, blank=False, null=True, verbose_name="13")
-    rep13 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_14 = models.CharField(max_length=100, blank=False, null=True, verbose_name="14")
-    rep14 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_15 = models.CharField(max_length=100, blank=False, null=True, verbose_name="15")
-    rep15 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_16 = models.CharField(max_length=100, blank=False, null=True, verbose_name="16")
-    rep16 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_17 = models.CharField(max_length=100, blank=False, null=True, verbose_name="17")
-    rep17 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_18 = models.CharField(max_length=100, blank=False, null=True, verbose_name="18")
-    rep18 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_19 = models.CharField(max_length=100, blank=False, null=True, verbose_name="19")
-    rep19 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-    aexc_20 = models.CharField(max_length=100, blank=True, null=True, verbose_name="20")
-    rep20 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
-
-
-
-    obs = models.TextField(max_length=400, blank=True, null=True, verbose_name="Observações")
+    obs = models.TextField(max_length=800, blank=True, null=True, verbose_name="Observações")
 
     def __str__(self):
         return f'{self.nome}'
+
+
+class treinoB(models.Model):
+    nome = models.ForeignKey('aluno', on_delete=models.DO_NOTHING, default=None, verbose_name="Aluno")
+    bexc_1 = models.CharField(max_length=100, blank=False, null=True, verbose_name="1")
+    brep1 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_2 = models.CharField(max_length=100, blank=False, null=True, verbose_name="2")
+    brep2 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    aexc_3 = models.CharField(max_length=100, blank=False, null=True, verbose_name="3")
+    brep3 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    aexc_4 = models.CharField(max_length=100, blank=False, null=True, verbose_name="4")
+    brep4 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_5 = models.CharField(max_length=100, blank=False, null=True, verbose_name="5")
+    brep5 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_6 = models.CharField(max_length=100, blank=False, null=True, verbose_name="6")
+    brep6 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_7 = models.CharField(max_length=100, blank=False, null=True, verbose_name="7")
+    brep7 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_8 = models.CharField(max_length=100, blank=False, null=True, verbose_name="8")
+    brep8 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_9 = models.CharField(max_length=100, blank=False, null=True, verbose_name="9")
+    brep9 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    bexc_10 = models.CharField(max_length=100, blank=False, null=True, verbose_name="10")
+    brep10 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    bexc_11 = models.CharField(max_length=100, blank=False, null=True, verbose_name="11")
+    brep11 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    bexc_12 = models.CharField(max_length=100, blank=False, null=True, verbose_name="12")
+    brep12 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+
 
 
 

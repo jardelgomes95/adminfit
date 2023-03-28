@@ -1,6 +1,21 @@
+h1 {
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+#cabecalho{
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+
 table {
   border-collapse: collapse;
   width: 100%;
+  padding: 3cm;
 }
 
 th, td {
@@ -10,5 +25,8 @@ th, td {
 }
 
 th {
-  background-color: #dddddd;
+  background-color: #blue;
 }
+
+
+

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude #treinoB, treinoC, treinoD, treinoE
+from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude, treinoB #treinoC, treinoD, treinoE
 from django.contrib import messages         # mensagens do django
 from django.urls import reverse_lazy     # retorno após submeter
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView      # class based view
@@ -22,7 +22,7 @@ class alunoListView(ListView):
 class alunoUpdateView(UpdateView):
     model = aluno
     template_name = 'update/update_aluno.html'
-    fields = '__all__'
+    fields = ['nome', 'email', 'cpf', 'phone', 'profissao', 'obs']
 
     def get_success_url(self):
         messages.success(self.request, 'DADOS DO ALUNO ATUALIZADOS COM SUCESSO')
