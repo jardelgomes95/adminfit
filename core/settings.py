@@ -44,7 +44,10 @@ MY_APPS = [
 ]
 
 THIRDS_APPS = [
-    "bootstrapform"
+    'bootstrapform',
+    'adminlte3',
+    'adminlte3_theme'
+
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + MY_APPS + THIRDS_APPS
@@ -135,7 +138,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "/static/") #usado durante reprodução
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "avaliacao/static"),
     'var/www/static',
 ]
 

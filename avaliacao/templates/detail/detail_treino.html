@@ -1,70 +1,16 @@
+{% extends 'adminlte/base.html' %}
 {% load static %}
 {% block content %}
 
 
 <head xmlns="http://www.w3.org/1999/html">
     <title>Treino</title>
-    
-<style>
 
-body{
-    margin-top: 3cm;
-    margin-left: 3cm;
-    margin-right: 2cm;
-    margin-bottom: 2cm;
-}
-
-h1 {
-  font-size: 32px;
-  font-family: 'Times New Roman', Times, serif;
-  width: 90%;
-  font-weight: bold;
-  text-align: center;
-
-}
-
-#cabecalho{
-  font-size: larger;
-  font-family: 'Times New Roman', Times, serif;
-  
-}
-
-table {
-  border-collapse: collapse;
-  width: 90%;
-}
-
-th, td {
-  border: 2px solid black;
-  padding: 8px;
-  text-align: left;
-}
- .colA{
-  background-color: #525f4c;
-  width: 85%;
-}
-
-.colb{
-  background-color: #525f4c;
-  width: 15%;
-}
-
-#A{
-    background-color: rgb(72, 138, 72);
-    font-size: 28;
-    width: 90%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-}
-
-p{
-    font-family: Arial, Helvetica, sans-serif;
-}
-    </style>
+    <link href="{% static "css/detail_treino.css" %}" rel="stylesheet">
 
 </head>
 
-<body>
+
     <h1>FICHA DE TREINO</h1>
 </br>
 
@@ -75,69 +21,86 @@ p{
 </div>
 </br>
 
-<p id="A">TREINO A</p>  
+<p class="titulo">TREINO A</p>
 
+<div class="content">
+  <div class="container-fluid">
 
-<table class="table table-striped" border="1px">
-    <thead>
-    <th class="colA">Exercício</th>
-    <th class="colB">Repetições</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td><p>{{ object.aexc_1 }}</p></td>
-        <td><p>{{ object.rep1 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_2 }}</p></td>
-        <td><p>{{ object.rep2 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_3 }}</p></td>
-        <td><p>{{ object.rep3 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_4 }}</p></td>
-        <td><p>{{ object.rep4 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_5 }}</p></td>
-        <td><p>{{ object.rep5 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_6 }}</p></td>
-        <td><p>{{ object.rep6 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_7 }}</p></td>
-        <td><p>{{ object.rep7 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_8 }}</p></td>
-        <td><p>{{ object.rep8 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_9 }}</p></td>
-        <td><p>{{ object.rep9 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_10 }}</p></td>
-        <td><p>{{ object.rep10 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_11 }}</p></td>
-        <td><p>{{ object.rep11 }}</p></td>
-    </tr>
-    <tr>
-        <td><p>{{ object.aexc_12 }}</p></td>
-        <td><p>{{ object.rep12 }}</p></td>
-    </tr>
+    <table class="table table-striped" border="1px">
+        <thead>
+        <th class="col">N°</th>
+        <th class="colA">Exercício</th>
+        <th class="colB">Repetições</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><p>1</p></td>
+            <td><p>{{ object.aexc_1 }}</p></td>
+            <td><p>{{ object.rep1 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>2</p></td>
+            <td><p>{{ object.aexc_2 }}</p></td>
+            <td><p>{{ object.rep2 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>3</p></td>
+            <td><p>{{ object.aexc_3 }}</p></td>
+            <td><p>{{ object.rep3 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>4</p></td>
+            <td><p>{{ object.aexc_4 }}</p></td>
+            <td><p>{{ object.rep4 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>5</p></td>
+            <td><p>{{ object.aexc_5 }}</p></td>
+            <td><p>{{ object.rep5 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>6</p></td>
+            <td><p>{{ object.aexc_6 }}</p></td>
+            <td><p>{{ object.rep6 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>7</p></td>
+            <td><p>{{ object.aexc_7 }}</p></td>
+            <td><p>{{ object.rep7 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>8</p></td>
+            <td><p>{{ object.aexc_8 }}</p></td>
+            <td><p>{{ object.rep8 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>9</p></td>
+            <td><p>{{ object.aexc_9 }}</p></td>
+            <td><p>{{ object.rep9 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>10</p></td>
+            <td><p>{{ object.aexc_10 }}</p></td>
+            <td><p>{{ object.rep10 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>11</p></td>
+            <td><p>{{ object.aexc_11 }}</p></td>
+            <td><p>{{ object.rep11 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>12</p></td>
+            <td><p>{{ object.aexc_12 }}</p></td>
+            <td><p>{{ object.rep12 }}</p></td>
+        </tr>
 
+        <p class="obs">{{ object.obs }}</p>
 
-
-    <p>{{ object.obs }}</p>
-
-    </tbody>
-
-</body>
+        </tbody>
+    </table>
+  </div>
+</div>
+</br>
+<a class="btn btn-info" href="{% url 'lista_aluno' %}">Voltar</a>
+</br>
 {% endblock %}

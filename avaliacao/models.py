@@ -247,6 +247,34 @@ class treinoB(models.Model):
     brep12 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
 
 
+class treinoC(models.Model):
+    nome = models.ForeignKey('aluno', on_delete=models.DO_NOTHING, default=None, verbose_name="Aluno")
+    cexc_1 = models.CharField(max_length=100, blank=False, null=True, verbose_name="1")
+    crep1 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_2 = models.CharField(max_length=100, blank=False, null=True, verbose_name="2")
+    crep2 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_3 = models.CharField(max_length=100, blank=False, null=True, verbose_name="3")
+    crep3 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_4 = models.CharField(max_length=100, blank=False, null=True, verbose_name="4")
+    crep4 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_5 = models.CharField(max_length=100, blank=False, null=True, verbose_name="5")
+    crep5 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_6 = models.CharField(max_length=100, blank=False, null=True, verbose_name="6")
+    crep6 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_7 = models.CharField(max_length=100, blank=False, null=True, verbose_name="7")
+    crep7 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_8 = models.CharField(max_length=100, blank=False, null=True, verbose_name="8")
+    crep8 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_9 = models.CharField(max_length=100, blank=False, null=True, verbose_name="9")
+    crep9 = models.CharField(max_length=6, blank=False, null=True, verbose_name='RP')
+    cexc_10 = models.CharField(max_length=100, blank=False, null=True, verbose_name="10")
+    crep10 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    cexc_11 = models.CharField(max_length=100, blank=False, null=True, verbose_name="11")
+    crep11 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+    cexc_12 = models.CharField(max_length=100, blank=False, null=True, verbose_name="12")
+    crep12 = models.CharField(max_length=6, blank=True, null=True, verbose_name='RP')
+
+
 
 
 #class personal(models.Model):
