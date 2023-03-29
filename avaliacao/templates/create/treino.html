@@ -1,11 +1,90 @@
 {% extends 'adminlte/base.html' %}
 {% load bootstrap %}
 {% block content  %}
-    <center><h1>TREINO</h1></center>
+
+<head xmlns="http://www.w3.org/1999/html">
+    <title>Treino A</title>
+    <style>
+        h1 {
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        }
+
+        .col{
+        widith: 75%;
+
+       }
+
+        .col2 {
+        width:  10%;
+        }
+
+        .form-group, .row {
+        margin-left: 1cm;
+        margin-right: 1cm;
+        }
+
+        .form-obs {
+        margin-left: 1cm;
+        margin-right: 1cm;
+        }
+
+    </style>
+</head>
+
+    <h1>TREINO A</h1>
         <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form|bootstrap }}
-        <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
-        <input class="btn btn-primary" type="submit" value="Cadastrar">
-    </form>
+            <div class="form-group">
+    <label for="formGroupExampleInput">Nome</label>
+    <input type="text" text="{{object.nome}}" class="form-control" placeholder="Nome">
+    <label for="formGroupExampleInput">Data</label>
+    <input type="date" date="{{object.dt_treino}}" class="form-control" placeholder="E1">
+    <label for="formGroupExampleInput">Validade</label>
+    <input type="date" date="{{object.validade}}" class="form-control" placeholder="E1">
+  </div>
+</br>
+        <div class="row">
+    <div class="col">
+        <input type="text>" text="{{object.aexc_1}}" class="form-control" placeholder="E1">
+        <input type="text>" text="{{object.aexc_2}}" class="form-control" placeholder="E2">
+        <input type="text>" text="{{object.aexc_3}}" class="form-control" placeholder="E3">
+        <input type="text>" text="{{object.aexc_4}}" class="form-control" placeholder="E4">
+        <input type="text>" text="{{object.aexc_5}}" class="form-control" placeholder="E5">
+        <input type="text>" text="{{object.aexc_6}}" class="form-control" placeholder="E6">
+        <input type="text>" text="{{object.aexc_7}}" class="form-control" placeholder="E7">
+        <input type="text>" text="{{object.aexc_8}}" class="form-control" placeholder="E8">
+        <input type="text>" text="{{object.aexc_9}}" class="form-control" placeholder="E9">
+        <input type="text>" text="{{object.aexc_10}}" class="form-control" placeholder="E10">
+        <input type="text>" text="{{object.aexc_11}}" class="form-control" placeholder="E11">
+        <input type="text>" text="{{object.aexc_12}}" class="form-control" placeholder="E12">
+    </div>
+    <div class="col2">
+        <input type="{{object.rep1}}" class="form-control" placeholder="REP 1">
+        <input type="{{object.rep2}}" class="form-control" placeholder="REP 2">
+        <input type="{{object.rep3}}" class="form-control" placeholder="REP 3">
+        <input type="{{object.rep4}}" class="form-control" placeholder="REP 4">
+        <input type="{{object.rep5}}" class="form-control" placeholder="REP 5">
+        <input type="{{object.rep6}}" class="form-control" placeholder="REP 6">
+        <input type="{{object.rep7}}" class="form-control" placeholder="REP 7">
+        <input type="{{object.rep8}}" class="form-control" placeholder="REP 8">
+        <input type="{{object.rep9}}" class="form-control" placeholder="REP 9">
+        <input type="{{object.rep10}}" class="form-control" placeholder="REP 10">
+        <input type="{{object.rep11}}" class="form-control" placeholder="REP 11">
+        <input type="{{object.rep12}}" class="form-control" placeholder="REP 12">
+    </div>
+  </div>
+</br>
+
+    <div class="form-obs">
+    <label for="formGroupExampleInput">Observações</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome">
+    </div>
+
+</br>
+            <input class="btn btn-primary" type="submit" value="Cadastrar">
+            <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
+        </form>
+
 {% endblock %}
