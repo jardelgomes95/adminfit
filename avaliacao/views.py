@@ -3,6 +3,7 @@ from .models import aluno, avaliacao, exercicio, treinoA, ficha_de_saude, treino
 from django.contrib import messages         # mensagens do django
 from django.urls import reverse_lazy     # retorno após submeter
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView      # class based view
+from .forms import avaliacaoForm, treinoAForm
 
 
 class alunoCreateView(CreateView):
@@ -41,10 +42,9 @@ class alunoDetailView(DetailView):
 
 class avaliacaoCreateView(CreateView):
     model = avaliacao
+    form_class = avaliacaoForm
     template_name = 'create/avaliacao.html'
-    fields = ['nome', 'sexo', 'idade', 'peso', 'altura', 'ativo', 'cintura', 'quadril',
-              'torax', 'ombro', 'abdomen', 'biceps', 'bicesps', 'coxa', 'panturrilha',
-              'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']
+
 
     def get_success_url(self):
         messages.success(self.request, 'AVALIAÇÃO CADASTRADA COM SUCESSO')
@@ -76,8 +76,10 @@ class avaliacaoDetailView(DetailView):
 
 class treinoCreateView(CreateView):
     model = treinoA
+    #form_class = treinoAForm
     template_name = 'create/treino.html'
     fields = '__all__'
+
 
     def get_success_url(self):
         messages.success(self.request, 'TREINO CADASTRADO COM SUCESSO')

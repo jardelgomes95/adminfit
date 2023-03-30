@@ -46,6 +46,7 @@ MY_APPS = [
 THIRDS_APPS = [
     'bootstrapform',
     'adminlte3',
+    'crispy_forms',
     'adminlte3_theme'
 
 ]
@@ -151,3 +152,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #usado na reprodução (projeto na 
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
