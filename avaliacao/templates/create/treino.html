@@ -11,13 +11,23 @@
         font-size: 40px;
         font-family: 'Times New Roman', Times, serif;
         text-align: center;
+        font-weight: bold;
         }
 
-        .form {
+        .form, #buttons {
         margin-left: 4cm;
         margin-right: 4cm;
-        text-algin: center;
+        
         }
+
+
+       #ex, #rep {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            font-weight: bold;
+       }
+
+       
 
     </style>
 </head>
@@ -30,12 +40,24 @@
     <div class="form">
         <div class="cabecalho" style="widith:100%">
             {{form.nome|as_crispy_field}}
-            {{form.dt_treino|as_crispy_field}}
-            {{form.validade|as_crispy_field}}
+            <div class="row" style="text-algin: center;">
+                <div class="col-6">
+                    {{form.dt_treino|as_crispy_field}}
+                    </br>
+                </div>
+                <div class="col-6">
+                   {{form.validade|as_crispy_field}}
+                    </br>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="row" style="text-algin: center;">
-            <div class="col-10" style="widith: 100%;">
+        <div class="row">
+            <div class="col-10">
+                <p id="ex">Exercício</p>
+                </br>
                 {{form.aexc_1|as_crispy_field}}
                 {{form.aexc_2|as_crispy_field}}
                 {{form.aexc_3|as_crispy_field}}
@@ -49,7 +71,9 @@
                 {{form.aexc_11|as_crispy_field}}
                 {{form.aexc_12|as_crispy_field}}
             </div>
-            <div class="col-2" style="widith:100%;">
+            <div class="col-2">
+                <p id="rep">Repetições</p>
+                </br>
                 {{form.rep1|as_crispy_field}}
                 {{form.rep2|as_crispy_field}}
                 {{form.rep3|as_crispy_field}}
@@ -65,12 +89,17 @@
             </div>
         </div>
 
-        <div class="obs" style="widith:100%">
+        <div class="obs">
             {{form.obs|as_crispy_field}}
         </div>
     </div>
-            <input class="btn btn-primary" type="submit" value="Cadastrar">
-            <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
         </form>
+            </br>
+            <div id="buttons">
+                <input class="btn btn-primary" type="submit" value="Cadastrar">
+                <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
+            </div>
+            </br>   
+        
 
 {% endblock %}
