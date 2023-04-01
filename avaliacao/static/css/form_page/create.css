@@ -1,0 +1,18 @@
+h1, h3 {
+         font-family: 'Times New Roman', Times, serif;
+         text-align: center;
+         font-weight: bold;
+         font-size: 30px;
+        }
+
+.form, #buttons {
+         margin-left: 4cm;
+         margin-right: 4cm;
+        }
+
+
+#ex, #rep {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        font-weight: bold;
+       }

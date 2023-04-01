@@ -22,7 +22,7 @@ class alunoListView(ListView):
 
 class alunoUpdateView(UpdateView):
     model = aluno
-    template_name = 'form_page/update_aluno.html'
+    template_name = 'update/update_aluno.html'
     fields = ['nome', 'email', 'cpf', 'phone', 'profissao', 'obs']
 
     def get_success_url(self):
@@ -33,9 +33,7 @@ class alunoDetailView(DetailView):
     model = aluno
     template_name = 'detail/detail_aluno.html'
 
-#class avaliacaoPDFDetailView(PDFTemplateResponseMixin, DetailView):
-    #model = avaliacao
-    #template_name = 'detalhar/pdfaluno.html'
+
 
 
 ####AVALIAÇÃO#####
@@ -60,7 +58,7 @@ class avaliacaoListView(ListView):
 
 class avaliacaoUpdateView(UpdateView):
     model = avaliacao
-    template_name = 'form_page/update_avaliacao.html'
+    template_name = 'update/update_avaliacao.html'
     fields = ['nome', 'sexo', 'idade', 'peso', 'altura', 'ativo', 'cintura', 'quadril',
               'torax', 'ombro', 'abdomen', 'biceps', 'bicesps', 'coxa', 'panturrilha',
               'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']
@@ -106,6 +104,12 @@ class treinoUpdateView(UpdateView):
 class treinoDetailView(DetailView):
     model = treinoA
     template_name = 'detail/detail_treino.html'
+
+
+#class treinoPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    #model = treinoA
+    #template_name = 'detalhar/pdfaluno.html'
+
 
 #####Ficha de Saúde#######
 

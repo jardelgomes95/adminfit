@@ -6,7 +6,7 @@
     {% block logo %}
         <a href="/" class="brand-link">
             <img src="{%static 'admin-lte/dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            {% block logo_text %}<span class="brand-text font-weight-light">AdminLTE 3 </span>{% endblock %}
+            {% block logo_text %}<span class="brand-text font-weight-light">KL FITNESS </span>{% endblock %}
         </a>
     {% endblock %}
     <!-- sidebar: style can be found in sidebar.less -->
@@ -54,12 +54,12 @@
                     </a>
                     <ul class="nav nav-treeview menu-open">
                             <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{% url 'cadastrar_aluno' %}" class="nav-link">
                                         <i class="nav-icon fas fa-plus-square"></i> Cadastrar
                                     </a>
                                 </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="{% url 'lista_aluno' %}" class="nav-link active">
                                 <i class="nav-icon fas  fa-list"></i> Lista
                             </a>
                         </li>
@@ -76,12 +76,12 @@
                     </a>
                     <ul class="nav nav-treeview menu-open">
                             <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{% url 'cadastrar_avaliacao' %}" class="nav-link">
                                         <i class="nav-icon fas fa-plus-square"></i> Cadastrar
                                     </a>
                                 </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="{% url 'lista_avaliacao' %}" class="nav-link active">
                                 <i class="nav-icon fas  fa-list"></i> Lista
                             </a>
                         </li>
@@ -98,12 +98,12 @@
                     </a>
                     <ul class="nav nav-treeview menu-open">
                             <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{% url 'cadastrar_treino' %}" class="nav-link">
                                         <i class="nav-icon fas fa-plus-square"></i> Cadastrar
                                     </a>
                                 </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="{% url 'lista_treino' %}" class="nav-link active">
                                 <i class="nav-icon fas  fa-list"></i> Lista
                             </a>
                         </li>

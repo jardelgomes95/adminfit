@@ -1,0 +1,21 @@
+
+table {
+        border-collapse: collapse;
+        width: 90%;
+        }
+
+#page {
+        margin-right: 3cm;
+        margin-left: 3cm;
+        }
+
+h1 {
+     font-family: 'Times New Roman', Times, serif;
+     text-align: center;
+     font-weight: bold;
+     font-size: 30px;
+     }
+
+th, #c4 {
+        text-align: center;
+        }

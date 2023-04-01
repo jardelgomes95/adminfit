@@ -1,6 +1,9 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
-{% block content %}
-    <h1>ALUNO</h1>
+{% block content  %}
+    <h1>DETALHES DA AVALIAÇÃO</h1>
 
 <p><b>Nome:</b> {{ object.nome }}</p>
 <p><b>Data da Avaliação:</b> {{ object.dt_avaliacao }}</p>

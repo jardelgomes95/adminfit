@@ -1,32 +1,42 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
-{% block content %}
-    <h1>PÁGINA DE LISTAGEM DE ALUNOS</h1>
-    <a class="btn btn-primary" href="{% url 'cadastrar_aluno' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+{% block content  %}
+<head>
+    <title>Avaliações</title>
+    <link href="{% static "css/list/list.css" %}" rel="stylesheet">
+</head>
 
-    <table class="table table-striped" border="0px">
-        <thead>
-            <th>MATRICULA</th>
+<div id="page">
+    <h1>PÁGINA DE LISTAGEM DE AVALIAÇÕES</h1>
+    </br>
+    <a class="btn btn-success" href="{% url 'cadastrar_aluno' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+    </br>
+    </br>
+    <table class="table table-hover" border="1px">
+        <thead class="thead-dark">
             <th>NOME</th>
-            <th>CONTATO</th>
-            <th>DATA DE CADASTRO</th>
+            <th>MATRICULA</th>
+            <th>TELEFONE</th>
+            <th>EMAIL</th>
             <th>AÇÕES</th>
         </thead>
         <tbody>
     {% for obj_aluno in object_list %}
             <tr>
-                <td>{{obj_aluno.matricula}}</td>
                 <td>{{obj_aluno.nome}}</td>
+                <td>{{obj_aluno.matricula}}</td>
                 <td>{{obj_aluno.phone}}</td>
-                <td>{{obj_aluno.data}}</td>
-                <td>
-                    <a class="btn btn-primary" href="{% url 'cadastrar_treino' %}"><i class="fa fa-edit" rel="tooltip" title="Cadastrar Treino"></i> </a>
-                    <a href="{% url 'editar_aluno' obj_aluno.pk %}"><i title="ATUALIZAR"></i> </a>
+                <td>{{obj_aluno.email}}</td>
+                <td id="c4">
+                    <a href="{% url 'editar_aluno' obj_aluno.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
                     <a href="{% url 'detalhar_aluno' obj_aluno.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
                 </td>
             </tr>
     {% empty %}
         <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.
-            <br/>(–_–)</h3>
+            <br/>fa-user-times</h3>
     {% endfor %}
         </tbody>
     </table>
@@ -49,5 +59,6 @@
                 {% endif %}
             </span>
         </div>
+</div>
     {% endif %}
 {% endblock %}

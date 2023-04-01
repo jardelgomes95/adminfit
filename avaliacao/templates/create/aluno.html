@@ -4,6 +4,11 @@
 {% load bootstrap %}
 {% block content  %}
 
+<head>
+    <title>Cadastro</title>
+    <link href="{% static "css/form_page/create.css" %}" rel="stylesheet">
+</head>
+
     <h1>CADASTRO DE ALUNOS</h1>
         <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}

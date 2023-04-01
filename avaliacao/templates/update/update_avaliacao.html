@@ -7,7 +7,7 @@
 <head>
     <title>Avaliação Física</title>
 
-    <link href="{% static "css/form_page/avaliacao.css" %}" rel="stylesheet">
+    <link href="{% static "css/form_page/create.css" %}" rel="stylesheet">
 
     <style>
 
@@ -69,8 +69,8 @@
 
             </br>
          <div id="buttons">
-        <a class="btn btn-secondary" href="{% url 'lista_avaliacao' %}">Voltar</a>
-        <input class="btn btn-primary" type="submit" value="Cadastrar">
+             <input class="btn btn-primary" type="submit" value="Atualizar">
+             <a class="btn btn-secondary" href="{% url 'lista_avaliacao' %}">Voltar</a>
          </div>
     </form>
 {% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load bootstrap %}
+{% block content  %}
+<head>
+    <title>Treino</title>
+    <link href="{% static "css/list/list.css" %}" rel="stylesheet">
+</head>
+
+<div id="page">
+    <h1>PÁGINA DE LISTAGEM DE TREINOS</h1>
+    </br>
+    <a class="btn btn-success" href="{% url 'cadastrar_treino' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+    </br>
+    </br>
+    <table class="table table-hover" border="1px">
+        <thead class="thead-dark">
+            <th>NOME</th>
+            <th>DATA DO TREINO</th>
+            <th>VALIDO ATÉ</th>
+            <th>AÇÕES</th>
+        </thead>
+        <tbody>
+    {% for obj_treino in object_list %}
+            <tr>
+                <td>{{obj_treino.nome}}</td>
+                <td>{{obj_treino.dt_treino}}</td>
+                <td>{{obj_treino.validade}}</td>
+                <td id="c4">
+                    <a href="{% url 'editar_treino' obj_treino.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
+                    <a href="{% url 'detalhar_treino' obj_treino.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
+                </td>
+            </tr>
+    {% empty %}
+        <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI TREINOS CADASTRADOS EM SEU SISTEMA.
+            <br/>fa-user-times</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+     {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-default" href="?page=1">&laquo; Primeira Página </a>
+                <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i> Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Próxima Página <i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-default" href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+</div>
+    {% endif %}
+{% endblock %}

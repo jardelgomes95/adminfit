@@ -1,10 +1,20 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
 {% block content  %}
-    <h1>ATUALIZAR DADOS DO ALUNO</h1>
-    <form method="post" enctype="multipart/form-data">
+
+<head>
+    <title>Cadastro</title>
+    <link href="{% static "css/form_page/create.css" %}" rel="stylesheet">
+</head>
+
+    <h1>CADASTRO DE ALUNOS</h1>
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        {{ form|bootstrap }}
+        {{ form|crispy }}
+        <input class="btn btn-primary" type="submit" value="Atualizar">
         <a class="btn btn-secondary" href="{% url 'lista_aluno' %}">Voltar</a>
-        <input class="btn btn-outline-primary" type="submit" value="Atualizar">
+
     </form>
 {% endblock %}
