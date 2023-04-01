@@ -22,7 +22,7 @@ class alunoListView(ListView):
 
 class alunoUpdateView(UpdateView):
     model = aluno
-    template_name = 'update/update_aluno.html'
+    template_name = 'form_page/update_aluno.html'
     fields = ['nome', 'email', 'cpf', 'phone', 'profissao', 'obs']
 
     def get_success_url(self):
@@ -42,8 +42,11 @@ class alunoDetailView(DetailView):
 
 class avaliacaoCreateView(CreateView):
     model = avaliacao
-    form_class = avaliacaoForm
+    #form_class = avaliacaoForm
     template_name = 'create/avaliacao.html'
+    fields = ['nome', 'sexo', 'idade', 'peso', 'altura', 'ativo', 'cintura', 'quadril',
+              'torax', 'ombro', 'abdomen', 'biceps', 'bicesps', 'coxa', 'panturrilha',
+              'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']
 
 
     def get_success_url(self):
@@ -57,7 +60,7 @@ class avaliacaoListView(ListView):
 
 class avaliacaoUpdateView(UpdateView):
     model = avaliacao
-    template_name = 'update/update_avaliacao.html'
+    template_name = 'form_page/update_avaliacao.html'
     fields = ['nome', 'sexo', 'idade', 'peso', 'altura', 'ativo', 'cintura', 'quadril',
               'torax', 'ombro', 'abdomen', 'biceps', 'bicesps', 'coxa', 'panturrilha',
               'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']
@@ -92,7 +95,7 @@ class treinoListView(ListView):
 
 class treinoUpdateView(UpdateView):
     model = treinoA
-    template_name = 'update/update_avaliacao.html'
+    template_name = 'form_page/update_avaliacao.html'
     fields = '__all__'
 
     def get_success_url(self):
@@ -122,7 +125,7 @@ class fichaListView(ListView):
 
 class fichaUpdateView(UpdateView):
     model = ficha_de_saude
-    template_name = 'update/update_ficha.html'
+    template_name = 'form_page/update_ficha.html'
     fields = '__all__'
 
     def get_success_url(self):

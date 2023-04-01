@@ -1,11 +1,72 @@
 {% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
 {% block content  %}
+
+<head>
+    <title>Avaliação Física</title>
+    <link href="{% static "css/form_page/avaliacao.css" %}" rel="stylesheet">
+
+</head>
+
     <h1>AVALIAÇÃO</h1>
         <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form|bootstrap }}
+        <div class="form">
+            {{form.nome|as_crispy_field}}
+            {{form.ativo|as_crispy_field}}
+            <div class="row">
+                <div class="col-6">
+                {{form.sexo|as_crispy_field}}
+                {{form.idade|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.peso|as_crispy_field}}
+                    {{form.altura|as_crispy_field}}
+                </div>
+            </div>
+            </br>
+            <h3>Medidas</h3>
+            </br>
+            <div class="row">
+                <div class="col-6">
+                    {{form.cintura|as_crispy_field}}
+                    {{form.torax|as_crispy_field}}
+                    {{form.abdomen|as_crispy_field}}
+                    {{form.biceps|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.quadril|as_crispy_field}}
+                    {{form.ombro|as_crispy_field}}
+                    {{form.coxa|as_crispy_field}}
+                    {{form.bicesps|as_crispy_field}}
+                </div>
+
+            </div>
+                    {{form.panturrilha|as_crispy_field}}
+            </br>
+            <h3>Dobras Cutâneas</h3>
+            </br>
+            <div class="row">
+                <div class="col-6">
+                    {{form.d1|as_crispy_field}}
+                    {{form.d3|as_crispy_field}}
+                    {{form.d5|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.d2|as_crispy_field}}
+                    {{form.d4|as_crispy_field}}
+                    {{form.d6|as_crispy_field}}
+                </div>
+            </div>
+                    {{form.d7|as_crispy_field}}
+        </div>
+
+            </br>
+         <div id="buttons">
         <a class="btn btn-secondary" href="{% url 'lista_avaliacao' %}">Voltar</a>
         <input class="btn btn-primary" type="submit" value="Cadastrar">
+         </div>
     </form>
 {% endblock %}

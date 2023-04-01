@@ -71,9 +71,9 @@ class avaliacao(models.Model):
     altura = models.DecimalField(max_digits=3, decimal_places=2, null=False, blank=False, verbose_name="Altura")
     peso = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, verbose_name="Peso (Kg)")
     imc = models.FloatField(null=True, blank=True, verbose_name="IMC")
-    ativo = models.BooleanField(null=True, blank=True, verbose_name="Já Fez Atividade Física")
-    cintura = models.IntegerField(null=True, blank=True, verbose_name="Medida Cintura (cm)")
-    quadril = models.IntegerField(null=True, blank=True, verbose_name="Medida Quadril (cm)")
+    ativo = models.BooleanField(null=True, blank=True, verbose_name="Já Fez Atividade Física?")
+    cintura = models.IntegerField(null=True, blank=True, verbose_name="Cintura (cm)")
+    quadril = models.IntegerField(null=True, blank=True, verbose_name="Quadril (cm)")
     torax = models.IntegerField(null=True, blank=False, verbose_name="Tórax (cm)")
     ombro = models.IntegerField(null=True, blank=False, verbose_name="Ombro (cm)")
     abdomen = models.IntegerField(null=True, blank=False, verbose_name="Abdomên (cm)")
@@ -177,6 +177,7 @@ class ficha_de_saude(models.Model):
 class exercicio(models.Model):
     nome = models.CharField(max_length=255, blank=False, null=False, verbose_name="Nome do Exercicio")
     repeticoes = models.CharField(max_length=16, blank=True, null=True, verbose_name="Repetições")
+
 
     class Meta:
         verbose_name_plural = 'Cadastro de Exercicios'

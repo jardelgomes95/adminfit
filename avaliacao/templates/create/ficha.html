@@ -1,0 +1,14 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load bootstrap %}
+{% block content  %}
+
+    <h1>FICHA DE SAÚDE</h1>
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <a class="btn btn-secondary" href="{% url 'lista_ficha' %}">Voltar</a>
+        <input class="btn btn-primary" type="submit" value="Cadastrar">
+    </form>
+{% endblock %}

@@ -1,10 +1,13 @@
 {% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
 {% block content  %}
+
     <h1>CADASTRO DE ALUNOS</h1>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        {{ form|bootstrap }}
+        {{ form|crispy }}
         <a class="btn btn-secondary" href="{% url 'lista_aluno' %}">Voltar</a>
         <input class="btn btn-primary" type="submit" value="Cadastrar">
     </form>

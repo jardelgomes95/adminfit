@@ -1,63 +1,76 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% load bootstrap %}
-<<<<<<< HEAD
 {% block content  %}
-    <h1>ATUALIZAR AVALIAÇÃO</h1>
-    <form method="post" enctype="multipart/form-data">
+
+<head>
+    <title>Avaliação Física</title>
+
+    <link href="{% static "css/form_page/avaliacao.css" %}" rel="stylesheet">
+
+    <style>
+
+    </style>
+</head>
+
+    <h1>AVALIAÇÃO</h1>
+        <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form|bootstrap }}
-        <a class="btn btn-secondary" href="{% url 'lista_avaliacao' %}">Voltar</a>
-        <input class="btn btn-outline-primary" type="submit" value="Atualizar">
-    </form>
-=======
-{% block content %}
-    <h1>PÁGINA DE LISTAGEM DE ALUNOS</h1>
-    <a class="btn btn-primary" href="{% url 'cadastrar_avaliacao' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+        <div class="form">
+            {{form.nome|as_crispy_field}}
+            {{form.ativo|as_crispy_field}}
+            <div class="row">
+                <div class="col-6">
+                {{form.sexo|as_crispy_field}}
+                {{form.idade|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.peso|as_crispy_field}}
+                    {{form.altura|as_crispy_field}}
+                </div>
+            </div>
+            </br>
+            <h3>Medidas</h3>
+            </br>
+            <div class="row">
+                <div class="col-6">
+                    {{form.cintura|as_crispy_field}}
+                    {{form.torax|as_crispy_field}}
+                    {{form.abdomen|as_crispy_field}}
+                    {{form.biceps|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.quadril|as_crispy_field}}
+                    {{form.ombro|as_crispy_field}}
+                    {{form.coxa|as_crispy_field}}
+                    {{form.bicesps|as_crispy_field}}
+                </div>
 
-    <table class="table table-striped" border="0px">
-        <thead>
-            <th>MATRICULA</th>
-            <th>NOME</th>
-            <th>CONTATO</th>
-            <th>DATA DE CADASTRO</th>
-            <th>AÇÕES</th>
-        </thead>
-        <tbody>
-    {% for obj_aluno in object_list %}
-            <tr>
-                <td>{{obj_aluno.matricula}}</td>
-                <td>{{obj_aluno.nome}}</td>
-                <td>{{obj_aluno.phone}}</td>
-                <td>{{obj_aluno.data}}</td>
-                <td><a href="{% url 'cadastrar_treino' %}"><i class="fa fa-edit" rel="tooltip" title="Cadastrar Treino"></i> </a>
-                <td><a href="{% url 'editar_aluno' obj_aluno.pk %}"><i title="ATUALIZAR"></i> </a>
-                <td><a href="{% url 'detalhar_aluno' obj_aluno.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
-
-            </tr>
-    {% empty %}
-        <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.
-            <br/>(–_–)</h3>
-    {% endfor %}
-        </tbody>
-    </table>
-
-     {% if is_paginated %}
-        <div class="pagination">
-            <span class="step-links">
-                {% if page_obj.has_previous %}
-                    <a class="btn btn-default" href="?page=1">&laquo; Primeira Página </a>
-                <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i> Página Anterior </a>
-                {% endif %}
-
-                <span class="current">
-                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
-                </span>
-
-                {% if page_obj.has_next %}
-                    <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Próxima Página <i class="fa fa-arrow-right"></i></a>
-                    <a class="btn btn-default" href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
-                {% endif %}
-            </span>
+            </div>
+                    {{form.panturrilha|as_crispy_field}}
+            </br>
+            <h3>Dobras Cutâneas</h3>
+            </br>
+            <div class="row">
+                <div class="col-6">
+                    {{form.d1|as_crispy_field}}
+                    {{form.d3|as_crispy_field}}
+                    {{form.d5|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                    {{form.d2|as_crispy_field}}
+                    {{form.d4|as_crispy_field}}
+                    {{form.d6|as_crispy_field}}
+                </div>
+            </div>
+                    {{form.d7|as_crispy_field}}
         </div>
-    {% endif %}
->>>>>>> origin/main
+
+            </br>
+         <div id="buttons">
+        <a class="btn btn-secondary" href="{% url 'lista_avaliacao' %}">Voltar</a>
+        <input class="btn btn-primary" type="submit" value="Cadastrar">
+         </div>
+    </form>
 {% endblock %}
