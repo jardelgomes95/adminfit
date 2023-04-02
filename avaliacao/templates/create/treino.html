@@ -10,11 +10,10 @@
 </head>
 
     <h1>TREINO A</h1>
-        <form method="post" enctype="multipart/form-data" autocomplete="off">
-
+        <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+        <div class="form">
 
-    <div class="form">
         <div class="cabecalho" style="widith:100%">
             {{form.nome|as_crispy_field}}
             <div class="row" style="text-algin: center;">
@@ -31,52 +30,51 @@
 
         </div>
 
-        <div class="row">
-            <div class="col-10">
-                <p id="ex">Exercício</p>
-                </br>
-                {{form.aexc_1|as_crispy_field}}
-                {{form.aexc_2|as_crispy_field}}
-                {{form.aexc_3|as_crispy_field}}
-                {{form.aexc_4|as_crispy_field}}
-                {{form.aexc_5|as_crispy_field}}
-                {{form.aexc_6|as_crispy_field}}
-                {{form.aexc_7|as_crispy_field}}
-                {{form.aexc_8|as_crispy_field}}
-                {{form.aexc_9|as_crispy_field}}
-                {{form.aexc_10|as_crispy_field}}
-                {{form.aexc_11|as_crispy_field}}
-                {{form.aexc_12|as_crispy_field}}
+            <div class="row">
+                <div class="col-10">
+                    <p id="ex">Exercício</p>
+                    </br>
+                    {{form.aexc_1|as_crispy_field}}
+                    {{form.aexc_2|as_crispy_field}}
+                    {{form.aexc_3|as_crispy_field}}
+                    {{form.aexc_4|as_crispy_field}}
+                    {{form.aexc_5|as_crispy_field}}
+                    {{form.aexc_6|as_crispy_field}}
+                    {{form.aexc_7|as_crispy_field}}
+                    {{form.aexc_8|as_crispy_field}}
+                    {{form.aexc_9|as_crispy_field}}
+                    {{form.aexc_10|as_crispy_field}}
+                    {{form.aexc_11|as_crispy_field}}
+                    {{form.aexc_12|as_crispy_field}}
+                </div>
+                <div class="col-2">
+                    <p id="rep">Repetições</p>
+                    </br>
+                    {{form.rep1|as_crispy_field}}
+                    {{form.rep2|as_crispy_field}}
+                    {{form.rep3|as_crispy_field}}
+                    {{form.rep4|as_crispy_field}}
+                    {{form.rep5|as_crispy_field}}
+                    {{form.rep6|as_crispy_field}}
+                    {{form.rep7|as_crispy_field}}
+                    {{form.rep8|as_crispy_field}}
+                    {{form.rep9|as_crispy_field}}
+                    {{form.rep10|as_crispy_field}}
+                    {{form.rep11|as_crispy_field}}
+                    {{form.rep12|as_crispy_field}}
+                </div>
             </div>
-            <div class="col-2">
-                <p id="rep">Repetições</p>
-                </br>
-                {{form.rep1|as_crispy_field}}
-                {{form.rep2|as_crispy_field}}
-                {{form.rep3|as_crispy_field}}
-                {{form.rep4|as_crispy_field}}
-                {{form.rep5|as_crispy_field}}
-                {{form.rep6|as_crispy_field}}
-                {{form.rep7|as_crispy_field}}
-                {{form.rep8|as_crispy_field}}
-                {{form.rep9|as_crispy_field}}
-                {{form.rep10|as_crispy_field}}
-                {{form.rep11|as_crispy_field}}
-                {{form.rep12|as_crispy_field}}
+
+            <div class="obs">
+                {{form.obs|as_crispy_field}}
             </div>
         </div>
 
-        <div class="obs">
-            {{form.obs|as_crispy_field}}
-        </div>
-    </div>
-        </form>
             </br>
-            <div id="buttons">
-                <input class="btn btn-primary" type="submit" value="Cadastrar">
-                <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
-            </div>
-            </br>   
-        
-
+<div id="buttons">
+     <input class="btn btn-info" type="submit" value="Cadastrar">
+     <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
+</div>
+        </form>
+</br>
 {% endblock %}

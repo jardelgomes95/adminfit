@@ -28,6 +28,7 @@
                 <td>{{obj_treino.dt_treino}}</td>
                 <td>{{obj_treino.validade}}</td>
                 <td id="c4">
+                    <a href="{% url 'pdf_treino' obj_treino.pk %}"><i class="fa fa-file" rel="tooltip" title="IMPRIMIR"></i> </a>
                     <a href="{% url 'editar_treino' obj_treino.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
                     <a href="{% url 'detalhar_treino' obj_treino.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
                 </td>

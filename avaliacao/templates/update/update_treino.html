@@ -4,13 +4,13 @@
 {% load bootstrap %}
 {% block content  %}
 
-<head xmlns="http://www.w3.org/1999/html">
+<head>
     <title>Treino A</title>
     <link href="{% static "css/form_page/create.css" %}" rel="stylesheet">
 </head>
 
     <h1>TREINO A</h1>
-        <form method="post" enctype="multipart/form-data" autocomplete="off">
+        <form method="POST" enctype="multipart/form-data" autocomplete="off">
 
         {% csrf_token %}
 
@@ -70,13 +70,13 @@
             {{form.obs|as_crispy_field}}
         </div>
     </div>
-        </form>
-            </br>
-            <div id="buttons">
-                <input class="btn btn-primary" type="submit" value="Atualizar">
-                <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
-            </div>
-            </br>
 
+            </br>
+<div id="buttons">
+    <input class="btn btn-primary" type="submit" value="Atualizar">
+    <a class="btn btn-secondary" href="{% url 'lista_treino' %}">Voltar</a>
+</div>
+        </form>
+</br>
 
 {% endblock %}

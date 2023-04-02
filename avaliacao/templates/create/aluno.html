@@ -13,7 +13,8 @@
         <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
         {{ form|crispy }}
-        <a class="btn btn-secondary" href="{% url 'lista_aluno' %}">Voltar</a>
-        <input class="btn btn-primary" type="submit" value="Cadastrar">
+            <input class="btn btn-primary" type="submit" value="Cadastrar">
+            <a class="btn btn-secondary" href="{% url 'lista_aluno' %}">Voltar</a>
+
     </form>
 {% endblock %}

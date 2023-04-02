@@ -47,7 +47,8 @@ THIRDS_APPS = [
     'bootstrapform',
     'adminlte3',
     'crispy_forms',
-    'adminlte3_theme'
+    'adminlte3_theme',
+    'easy_pdf'
 
 ]
 

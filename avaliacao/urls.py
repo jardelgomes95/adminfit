@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import alunoCreateView, alunoListView, alunoUpdateView, alunoDetailView
 from .views import avaliacaoCreateView, avaliacaoListView, avaliacaoUpdateView, avaliacaoDetailView
-from .views import treinoCreateView, treinoListView, treinoDetailView, treinoUpdateView
+from .views import treinoCreateView, treinoListView, treinoDetailView, treinoUpdateView, PDFtreinoDetailView
 from .views import fichaCreateView, fichaListView, fichaUpdateView, fichaDetailView
 
 
@@ -23,6 +23,8 @@ urlpatterns = [
     path('lista/treino', treinoListView.as_view(), name="lista_treino"),
     path('atualizar/treino/<int:pk>', treinoUpdateView.as_view(), name="editar_treino"),
     path('detalhar/treino/<int:pk>', treinoDetailView.as_view(), name="detalhar_treino"),
+    path('treino/imprimir/<int:pk>', PDFtreinoDetailView.as_view(), name="pdf_treino"),
+
 
     path('ficha', fichaCreateView.as_view(), name="cadastrar_ficha"),
     path('lista/ficha', fichaListView.as_view(), name="lista_ficha"),

@@ -1,0 +1,153 @@
+{% extends "easy_pdf/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<head xmlns="http://www.w3.org/1999/html">
+    <title>Treino</title>
+    <meta charset="utf-8"/>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            line-height: 0.2cm;
+        }
+
+        table {
+            border-collapse: collapse;
+             width: 100%;
+        }   
+
+        th, td {
+            text-align: left;
+            padding: 2px;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+
+        #cabecalho {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 2px;
+            font-size: 14px;
+        }
+
+        .col {
+            width: 10%;
+        }
+
+        .colA {
+            width: 70%;
+        }
+
+        .colB {
+            width: 20%;
+        }
+
+        .titulo {
+            font-size: 16px;
+            font-weight: bolder;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+    </style>
+
+</head>
+    <h1>FICHA DE TREINO</h1>
+
+<div id="cabecalho">
+    <h3><b>NOME DO ALUNO:</b> {{object.nome}}</h3>
+    <h3><b>DATA DO TREINO:</b> {{object.dt_treino}}</h3>
+    <h3><b>VALIDO ATÉ:</b> {{object.validade}}</h3>
+</div>
+<p class="titulo">TREINO A</p>
+
+<div class="content">
+  <div class="container-fluid">
+
+    <table class="table table-striped" border="1px">
+        <thead>
+        <th class="col">N°</th>
+        <th class="colA">Exercício</th>
+        <th class="colB">Repetições</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><p>1</p></td>
+            <td><p>{{ object.aexc_1 }}</p></td>
+            <td><p>{{ object.rep1 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>2</p></td>
+            <td><p>{{ object.aexc_2 }}</p></td>
+            <td><p>{{ object.rep2 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>3</p></td>
+            <td><p>{{ object.aexc_3 }}</p></td>
+            <td><p>{{ object.rep3 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>4</p></td>
+            <td><p>{{ object.aexc_4 }}</p></td>
+            <td><p>{{ object.rep4 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>5</p></td>
+            <td><p>{{ object.aexc_5 }}</p></td>
+            <td><p>{{ object.rep5 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>6</p></td>
+            <td><p>{{ object.aexc_6 }}</p></td>
+            <td><p>{{ object.rep6 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>7</p></td>
+            <td><p>{{ object.aexc_7 }}</p></td>
+            <td><p>{{ object.rep7 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>8</p></td>
+            <td><p>{{ object.aexc_8 }}</p></td>
+            <td><p>{{ object.rep8 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>9</p></td>
+            <td><p>{{ object.aexc_9 }}</p></td>
+            <td><p>{{ object.rep9 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>10</p></td>
+            <td><p>{{ object.aexc_10 }}</p></td>
+            <td><p>{{ object.rep10 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>11</p></td>
+            <td><p>{{ object.aexc_11 }}</p></td>
+            <td><p>{{ object.rep11 }}</p></td>
+        </tr>
+        <tr>
+            <td><p>12</p></td>
+            <td><p>{{ object.aexc_12 }}</p></td>
+            <td><p>{{ object.rep12 }}</p></td>
+        </tr>
+
+        <p class="obs">{{ object.obs }}</p>
+
+        </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

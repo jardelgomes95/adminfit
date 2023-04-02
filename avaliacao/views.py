@@ -4,6 +4,8 @@ from django.contrib import messages         # mensagens do django
 from django.urls import reverse_lazy     # retorno após submeter
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView      # class based view
 from .forms import avaliacaoForm, treinoAForm
+from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
+
 
 
 class alunoCreateView(CreateView):
@@ -32,9 +34,6 @@ class alunoUpdateView(UpdateView):
 class alunoDetailView(DetailView):
     model = aluno
     template_name = 'detail/detail_aluno.html'
-
-
-
 
 ####AVALIAÇÃO#####
 
@@ -81,7 +80,6 @@ class treinoCreateView(CreateView):
     template_name = 'create/treino.html'
     fields = '__all__'
 
-
     def get_success_url(self):
         messages.success(self.request, 'TREINO CADASTRADO COM SUCESSO')
         return reverse_lazy('lista_treino')
@@ -93,7 +91,7 @@ class treinoListView(ListView):
 
 class treinoUpdateView(UpdateView):
     model = treinoA
-    template_name = 'form_page/update_avaliacao.html'
+    template_name = 'update/update_treino.html'
     fields = '__all__'
 
     def get_success_url(self):
@@ -106,9 +104,9 @@ class treinoDetailView(DetailView):
     template_name = 'detail/detail_treino.html'
 
 
-#class treinoPDFDetailView(PDFTemplateResponseMixin, DetailView):
-    #model = treinoA
-    #template_name = 'detalhar/pdfaluno.html'
+class PDFtreinoDetailView(PDFTemplateResponseMixin, DetailView):
+    model = treinoA
+    template_name = 'detail/pdftreino.html'
 
 
 #####Ficha de Saúde#######

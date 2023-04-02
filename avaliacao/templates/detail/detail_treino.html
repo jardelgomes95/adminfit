@@ -5,12 +5,88 @@
 
 <head xmlns="http://www.w3.org/1999/html">
     <title>Treino</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 36px;
+            line-height: 0.2cm;
+        }
 
-    <link href="{% static "css/detail_treino.css" %}" rel="stylesheet">
+        #cabecalho {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 2px;
+            font-size: 6px;
+        }
+
+
+        .col {
+            width: 10%;
+        }
+
+        .colA {
+            width: 70%;
+        }
+
+        .colB {
+            width: 20%;
+        }
+
+        .titulo {
+            font-size: 36px;
+            font-weight: bolder;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        table {
+            border-collapse: collapse;
+             width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 4px;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+
+        h4 {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #obs {
+            border-collapse: collapse;
+            border: 1px solid;
+
+        }
+
+       .obs {
+            margin-left: 2cm;
+            margin-right: 2cm;
+       }
+
+       #page {
+            margin-left: 3cm;
+            margin-right: 3cm;
+       }
+    </style>
 
 </head>
 
-
+<div id="page">
     <h1>FICHA DE TREINO</h1>
 </br>
 
@@ -93,14 +169,16 @@
             <td><p>{{ object.aexc_12 }}</p></td>
             <td><p>{{ object.rep12 }}</p></td>
         </tr>
-
-        <p class="obs">{{ object.obs }}</p>
-
         </tbody>
     </table>
+        <div id="obs">
+            <h4>Observações</h4>
+            <p class="obs">{{ object.obs }}</p>
+        </div>
   </div>
 </div>
 </br>
-<a class="btn btn-info" href="{% url 'lista_aluno' %}">Voltar</a>
+<a class="btn btn-info" href="{% url 'lista_treino' %}">Voltar</a>
 </br>
+</div>
 {% endblock %}
