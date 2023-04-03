@@ -61,23 +61,6 @@
         background-color: #f2f2f2;
         }
 
-        h4 {
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        #obs {
-            border-collapse: collapse;
-            border: 1px solid;
-
-        }
-
-       .obs {
-            margin-left: 2cm;
-            margin-right: 2cm;
-       }
-
        #page {
             margin-left: 3cm;
             margin-right: 3cm;
@@ -171,10 +154,14 @@
         </tr>
         </tbody>
     </table>
-        <div id="obs">
-            <h4>Observações</h4>
-            <p class="obs">{{ object.obs }}</p>
-        </div>
+        <table class="table table-striped" border="1px">
+            <thead>
+            <th>Observações</th>
+            </thead>
+            <tbody>
+            <td>{{ object.obs }}</td>
+            </tbody>
+        </table>
   </div>
 </div>
 </br>
